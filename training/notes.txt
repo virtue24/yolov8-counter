@@ -1,0 +1,5 @@
+pip install label-studio
+label-studio start
+
+a@gmail.com
+12345678
