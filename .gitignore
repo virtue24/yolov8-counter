@@ -1,3 +1,4 @@
+*.pt
 local/*
 *training/yolo11n.pt
 training/datasets/*
