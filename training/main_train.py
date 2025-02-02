@@ -1,11 +1,12 @@
 from ultralytics import YOLO
-
+from pathlib import Path
 
 model = YOLO("yolo11n.yaml")  # build a new model from YAML
 
 if __name__ == "__main__":
     EPOCHS = 1000
-
+    EXPERIMENT_NAME = "borek_01_01_2025"
+    project_path = Path(__file__).parent / 'experiments' / EXPERIMENT_NAME
     data_yaml_path:str = input("Enter the path to the data.yaml file: ")
     model.train(
         data=data_yaml_path, 
@@ -13,7 +14,9 @@ if __name__ == "__main__":
         epochs=EPOCHS, 
         amp=False, 
         device = 0,
-        save_period	=EPOCHS//10,      
+        save_period	=EPOCHS//3,  
+        project = project_path,   
+        time = 0.25, # hours
         augment=False,  # Disable augmentation
         hsv_h=0.0,  # No hue augmentation
         hsv_s=0.0,  # No saturation augmentation

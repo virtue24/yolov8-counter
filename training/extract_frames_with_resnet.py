@@ -5,6 +5,7 @@ import torch.nn as nn
 import random
 from torchvision import models, transforms
 from pathlib import Path
+import uuid
 
 def extract_frames_from_video(video_path, max_frames=None):
     """
@@ -182,7 +183,7 @@ def main():
     # 5. Save or display chosen frames
     for i, idx in enumerate(chosen_indices):
         chosen_frame = frames[idx]
-        out_name = f"output_{i}.jpg"
+        out_name = f"output_{i}_{uuid.uuid4()}.jpg"
         cv2.imwrite(save_path / out_name, chosen_frame)
         print(f"Saved frame {idx} as {out_name}")
 

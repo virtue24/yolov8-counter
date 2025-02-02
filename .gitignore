@@ -1,6 +1,7 @@
 local/*
 *training/yolo11n.pt
 training/datasets/*
+training/experiments/*
 *training/sqlite3.db
 *training/sqlite3.dll
 # Byte-compiled / optimized / DLL files
